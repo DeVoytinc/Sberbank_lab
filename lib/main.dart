@@ -11,9 +11,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
+        
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -35,16 +37,53 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
+        backgroundColor: Colors.white,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.logout), 
+            onPressed: () {  },
+          )
+        ],
+        leading: IconButton(
+            icon: Icon(Icons.close), 
+            onPressed: () {  },
+          )
       ),
-      body: const Center(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'Hello, world!',
+            Container(
+              width: 110,
+              height: 110,
+              decoration: ShapeDecoration(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(38),
+                  ),
+                  shadows: [
+                      BoxShadow(
+                          color: Color(0x7A1D1D25),
+                          blurRadius: 24,
+                          offset: Offset(0, 16),
+                          spreadRadius: -16,
+                      )
+                  ],
+              ),
+              child: Image.asset("lib/images/avatar.png"),
+          ),
+          SizedBox(height: 30,),
+          Text(
+            'Екатерина',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+                color: Colors.black,
+                fontSize: 24,
+                fontFamily: 'SF Pro Display',
+                fontWeight: FontWeight.w700,
+                height: 0.06,
             ),
+          ),
+          Expanded(child: Container())
           ],
         ),
       ),
