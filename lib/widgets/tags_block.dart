@@ -10,7 +10,6 @@ class TagsBlock extends StatefulWidget {
 }
 
 class _TagsBlockState extends State<TagsBlock> {
-  String? selectedChoice;
 
   @override
   Widget build(BuildContext context) {
@@ -21,11 +20,11 @@ class _TagsBlockState extends State<TagsBlock> {
         (int index) => Builder(
           builder: (BuildContext context) {
             return FilterChip(
-              label: Text(ModelsData.tags[index]),
-              selected: selectedChoice == ModelsData.tags[index],
+              label: Text(ModelsData.tags.keys.elementAt(index)),
+              selected: ModelsData.tags.values.elementAt(index),
               onSelected: (bool selected) {
                 setState(() {
-                  selectedChoice = selected ? ModelsData.tags[index] : null;
+                  ModelsData.tags[ModelsData.tags.keys.elementAt(index)] = selected;
                 });
               },
             );

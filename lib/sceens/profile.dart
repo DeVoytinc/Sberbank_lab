@@ -24,16 +24,14 @@ class ProfileScreen extends StatelessWidget {
             width: double.infinity,
             padding: const EdgeInsets.symmetric(vertical: 8),
             height: 170,
-            child: ListView(
+            child: ListView.builder(
               padding: EdgeInsets.all(17),
               scrollDirection: Axis.horizontal,
-              children: <Widget>[
-                HorizontalListItem(),
-                SizedBox(
-                  width: 8,
-                ),
-                HorizontalListItem(),
-              ],
+              itemCount: ModelsData.subscriptions.length,
+              itemBuilder: (context, index) {
+                return HorizontalListItem(
+                    subscription: ModelsData.subscriptions[index]);
+              },
             ),
           ),
           SectionHeader(

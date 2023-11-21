@@ -1,20 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:sberbank_lab/models/SubscriptionModel.dart';
 
 class HorizontalListItem extends StatelessWidget {
-  const HorizontalListItem({super.key});
+  const HorizontalListItem({super.key,required this.subscription});
+
+  final Subscription subscription;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 216,
       height: 130,
+      margin: EdgeInsets.only(right: 8),
       clipBehavior: Clip.antiAlias,
       decoration: ShapeDecoration(
         color: Colors.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
         ),
-        shadows: [
+        shadows: const [
           BoxShadow(
             color: Color(0x114F4F6C),
             blurRadius: 14,
@@ -36,7 +40,7 @@ class HorizontalListItem extends StatelessWidget {
             children: [
               
               Image.asset(
-                'lib/images/sber_prime.png',
+                subscription.imageName,
                 width: 36,
                 height: 36,
               ),
@@ -44,8 +48,8 @@ class HorizontalListItem extends StatelessWidget {
                 width: 13,
               ),
               Text(
-                'СберПрайм',
-                style: TextStyle(
+                subscription.title,
+                style: const TextStyle(
                   color: Colors.black,
                   fontSize: 16,
                   fontWeight: FontWeight.w500,
@@ -56,7 +60,7 @@ class HorizontalListItem extends StatelessWidget {
           ),
           Expanded(child: Container()),
           Text(
-            'Платёж 9 июля',
+            subscription.subtitle,
             style: TextStyle(
               color: Colors.black,
               fontSize: 14,
@@ -65,7 +69,7 @@ class HorizontalListItem extends StatelessWidget {
             ),
           ),
           Text(
-            '199 ₽ в месяц',
+            subscription.money,
             style: TextStyle(
               color: Colors.black.withOpacity(0.550000011920929),
               fontSize: 14,

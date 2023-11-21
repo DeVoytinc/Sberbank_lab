@@ -1,3 +1,4 @@
+import 'package:sberbank_lab/models/SubscriptionModel.dart';
 import 'package:sberbank_lab/models/TariffsAndLimitsItemModel.dart';
 
 
@@ -21,7 +22,26 @@ class ModelsData{
     ),
   ];
 
-   static List<String> tags =
+
+  static List<Subscription> subscriptions =
+  [
+    Subscription(
+      imageName: 'lib/images/sber_prime.png',  
+      title: 'СберПрайм', 
+      subtitle: 'Платеж 9 июля',
+      money: '199Р в месяц'
+    ),
+    Subscription(
+      imageName: 'lib/images/percent_fill.png',  
+      title: 'Переводы', 
+      subtitle: 'Автопродление 21 августа',
+      money: '199Р в месяц'
+    ),
+  ];
+
+
+
+  static List<String> tagslist =
   [
     'Еда',
     'Саморазвитие',
@@ -31,4 +51,11 @@ class ModelsData{
     'Забота о себе',
     'Наука',
   ];
+
+  static Map<String, bool> getTagsMap (){
+    return { for (var v in tagslist) v : false };
+  } 
+
+  static Map<String, bool> tags = getTagsMap();
+  
 }
