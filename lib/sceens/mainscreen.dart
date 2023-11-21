@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sberbank_lab/sceens/profile.dart';
 
 import '../widgets/appbar.dart';
 import '../widgets/section_header.dart';
@@ -31,22 +32,7 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
           ),
           SliverFillRemaining(
             child: TabBarView(controller: _tabController, children: [
-              Container(
-                color: const Color.fromARGB(221, 245, 245, 245),
-                child: ListView(
-                  physics: NeverScrollableScrollPhysics(),
-                  //crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SectionHeader(
-                        title: 'У вас подключено',
-                        paragraph:
-                            'Подписки, автоплатежи и сервисы на которые вы подписались'),
-                    SizedBox(
-                      height: 50,
-                    )
-                  ],
-                ),
-              ),
+              ProfileScreen(),
               SettingsScreen(),
             ]),
           )

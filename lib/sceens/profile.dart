@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/horizontal_list_item.dart';
 import '../widgets/section_header.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -16,9 +17,30 @@ class ProfileScreen extends StatelessWidget {
               title: 'У вас подключено',
               paragraph:
                   'Подписки, автоплатежи и сервисы на которые вы подписались'),
+          
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.symmetric(vertical: 8),
+            height: 170,
+            child: ListView(
+              padding: EdgeInsets.all(17),
+              scrollDirection: Axis.horizontal,
+              children: <Widget>[
+                HorizontalListItem(),
+                SizedBox(
+                  width: 8,
+                ),
+                HorizontalListItem(),
+              ],
+            ),
+          ),
+          SectionHeader(
+            title: 'Тарифы и лимиты',
+            paragraph: 'Для операций в Сбербанк Онлайн',
+          ),
           SizedBox(
-            height: 50,
-          )
+            height: 20,
+          ),
         ],
       ),
     );
