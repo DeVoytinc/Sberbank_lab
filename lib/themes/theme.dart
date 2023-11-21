@@ -38,14 +38,7 @@ ThemeData lightThemeData(BuildContext context) {
         ),
        
       ),
-      indicatorColor:  Color.fromARGB(255, 132, 6, 6),
     ),
-
-    bottomNavigationBarTheme: BottomNavigationBarThemeData(
-      backgroundColor: Colors.blue,
-      selectedItemColor: Colors.white,
-      unselectedItemColor: Colors.white60,
-    )
   );
       
 }

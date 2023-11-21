@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:sberbank_lab/sceens/profile.dart';
 
 import '../widgets/appbar.dart';
-import '../widgets/section_header.dart';
 import 'settings.dart';
 
 class MainScreen extends StatefulWidget {
@@ -31,7 +30,7 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
             tabController: _tabController,
           ),
           SliverFillRemaining(
-            child: TabBarView(controller: _tabController, children: [
+            child: TabBarView(controller: _tabController, children: const [
               ProfileScreen(),
               SettingsScreen(),
             ]),

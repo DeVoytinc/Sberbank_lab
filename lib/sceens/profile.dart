@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/ModelsData.dart';
+import '../widgets/horizontal_list.dart';
 import '../widgets/horizontal_list_item.dart';
 import '../widgets/section_header.dart';
 import '../widgets/tags_block.dart';
@@ -10,60 +11,49 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: const Color.fromARGB(221, 245, 245, 245),
-      child: ListView(
-        physics: NeverScrollableScrollPhysics(),
-        //crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SectionHeader(
-              title: 'У вас подключено',
-              paragraph:
-                  'Подписки, автоплатежи и сервисы на которые вы подписались'),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.symmetric(vertical: 8),
-            height: 170,
-            child: ListView.builder(
-              padding: EdgeInsets.all(17),
-              scrollDirection: Axis.horizontal,
-              itemCount: ModelsData.subscriptions.length,
-              itemBuilder: (context, index) {
-                return HorizontalListItem(
-                    subscription: ModelsData.subscriptions[index]);
-              },
-            ),
-          ),
-          SectionHeader(
-            title: 'Тарифы и лимиты',
-            paragraph: 'Для операций в Сбербанк Онлайн',
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          ListView.builder(
-            shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
-            itemCount: ModelsData.tariffsAndLimitsList.length,
-            itemBuilder: (context, index) {
-              return TariffsAndLimitsItem(
-                  data: ModelsData.tariffsAndLimitsList[index]);
-            },
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          SectionHeader(
-            title: 'Интересы',
+    return ListView(
+      physics: const NeverScrollableScrollPhysics(),
+      children: [
+        const SectionHeader(
+            title: 'У вас подключено',
             paragraph:
-                'Мы подбираем истории и предложения по темам, которые вам нравятся',
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: TagsBlock(),
-          ),
-        ],
-      ),
+                'Подписки, автоплатежи и сервисы на которые вы подписались'),
+        const HorizontalList(),
+        const SectionHeader(
+          title: 'Тарифы и лимиты',
+          paragraph: 'Для операций в Сбербанк Онлайн',
+        ),
+        const SizedBox(
+          height: 20,
+        ),
+        ListView.separated(
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          itemCount: ModelsData.tariffsAndLimitsList.length,
+          itemBuilder: (context, index) {
+            return TariffsAndLimitsItem(
+                data: ModelsData.tariffsAndLimitsList[index]);
+          }, 
+          separatorBuilder: (BuildContext context, int index) { 
+            return const Divider(height: 10, thickness: 1, indent: 63,);
+          },
+        ),
+        const SizedBox(
+          height: 20,
+        ),
+        const SectionHeader(
+          title: 'Интересы',
+          paragraph:
+              'Мы подбираем истории и предложения по темам, которые вам нравятся',
+        ),
+        const SizedBox(
+          height: 10,
+        ),
+        const Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          child: TagsBlock(),
+        ),
+      ],
     );
   }
 }

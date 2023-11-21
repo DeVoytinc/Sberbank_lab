@@ -6,9 +6,9 @@ import '../themes/colors.dart';
 
 class TariffsAndLimitsItem extends StatelessWidget {
   const TariffsAndLimitsItem({
-    super.key, 
-    required this.data, 
-    });
+    super.key,
+    required this.data,
+  });
 
   final TariffsAndLimitsItemModel data;
 
@@ -16,8 +16,13 @@ class TariffsAndLimitsItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: GestureDetector(
+        onTap: () {
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+            content: Text(data.title),
+            showCloseIcon: true,
+          ));
+        },
         child: Row(
           children: [
             SvgPicture.asset(
@@ -26,7 +31,7 @@ class TariffsAndLimitsItem extends StatelessWidget {
               height: 36,
               color: MyColors.primary,
             ),
-            SizedBox(
+            const SizedBox(
               width: 12,
             ),
             Column(
@@ -34,8 +39,8 @@ class TariffsAndLimitsItem extends StatelessWidget {
               children: [
                 Text(
                   data.title,
-                  style: TextStyle(
-                    color: Colors.black,
+                  style: const TextStyle(
+                    color: MyColors.TextTitleColor,
                     fontSize: 16,
                     fontWeight: FontWeight.w500,
                     letterSpacing: -0.40,
@@ -43,8 +48,8 @@ class TariffsAndLimitsItem extends StatelessWidget {
                 ),
                 Text(
                   data.subtitle,
-                  style: TextStyle(
-                    color: Colors.black.withOpacity(0.550000011920929),
+                  style: const TextStyle(
+                    color: MyColors.TextSubtitleColor,
                     fontSize: 14,
                     fontWeight: FontWeight.w500,
                     letterSpacing: -0.41,
@@ -53,7 +58,15 @@ class TariffsAndLimitsItem extends StatelessWidget {
               ],
             ),
             Spacer(),
-            SvgPicture.asset('lib/images/arrow_right.svg'),
+            IconButton(
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                  content: Text(data.title),
+                  showCloseIcon: true,
+                ));
+              },
+              icon: SvgPicture.asset('lib/images/arrow_right.svg'),
+            ),
           ],
         ),
       ),
