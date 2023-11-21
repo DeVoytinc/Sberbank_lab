@@ -5,6 +5,8 @@ class SettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: const CircularProgressIndicator());
+    return Container(
+        color: const Color.fromARGB(221, 245, 245, 245),
+        child: Center(child: const CircularProgressIndicator()));
   }
 }

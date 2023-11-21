@@ -12,7 +12,7 @@ class CustomAppbar extends StatelessWidget {
     return SliverAppBar(
       elevation: 1,
       pinned: true,
-      floating: true,
+      floating: false,
       expandedHeight: 270,
       actions: [
         IconButton(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../models/ModelsData.dart';
 import '../widgets/horizontal_list_item.dart';
 import '../widgets/section_header.dart';
+import '../widgets/tags_block.dart';
 import '../widgets/tariffs_and_limits_item.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -58,6 +59,10 @@ class ProfileScreen extends StatelessWidget {
             title: 'Интересы',
             paragraph:
                 'Мы подбираем истории и предложения по темам, которые вам нравятся',
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: TagsBlock(),
           ),
         ],
       ),
