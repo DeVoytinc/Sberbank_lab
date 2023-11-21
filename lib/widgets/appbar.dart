@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../themes/colors.dart';
 
 class CustomAppbar extends StatelessWidget {
   const CustomAppbar({Key? key, required this.tabController})

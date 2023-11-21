@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/ModelsData.dart';
 import '../widgets/horizontal_list.dart';
-import '../widgets/horizontal_list_item.dart';
 import '../widgets/section_header.dart';
 import '../widgets/tags_block.dart';
 import '../widgets/tariffs_and_limits_item.dart';
@@ -12,7 +11,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      physics: const NeverScrollableScrollPhysics(),
+      physics:NeverScrollableScrollPhysics(),
       children: [
         const SectionHeader(
             title: 'У вас подключено',
@@ -35,7 +34,7 @@ class ProfileScreen extends StatelessWidget {
                 data: ModelsData.tariffsAndLimitsList[index]);
           }, 
           separatorBuilder: (BuildContext context, int index) { 
-            return const Divider(height: 10, thickness: 1, indent: 63,);
+            return const Divider(height: 10, thickness: 1.5, indent: 63,);
           },
         ),
         const SizedBox(
@@ -52,6 +51,9 @@ class ProfileScreen extends StatelessWidget {
         const Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: TagsBlock(),
+        ),
+        const SizedBox(
+          height: 100,
         ),
       ],
     );

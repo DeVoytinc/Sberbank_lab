@@ -34,30 +34,32 @@ class TariffsAndLimitsItem extends StatelessWidget {
             const SizedBox(
               width: 12,
             ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  data.title,
-                  style: const TextStyle(
-                    color: MyColors.TextTitleColor,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                    letterSpacing: -0.40,
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    data.title,
+                    maxLines: 10,
+                    style: const TextStyle(
+                      color: MyColors.TextTitleColor,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                      letterSpacing: -0.40,
+                    ),
                   ),
-                ),
-                Text(
-                  data.subtitle,
-                  style: const TextStyle(
-                    color: MyColors.TextSubtitleColor,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500,
-                    letterSpacing: -0.41,
-                  ),
-                )
-              ],
+                  Text(
+                    data.subtitle,
+                    style: const TextStyle(
+                      color: MyColors.TextSubtitleColor,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
+                      letterSpacing: -0.41,
+                    ),
+                  )
+                ],
+              ),
             ),
-            Spacer(),
             IconButton(
               onPressed: () {
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(

@@ -24,19 +24,25 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: CustomScrollView(
-        slivers: [
-          CustomAppbar(
-            tabController: _tabController,
-          ),
-          SliverFillRemaining(
-            child: TabBarView(controller: _tabController, children: const [
+      body: DefaultTabController(
+        length: 2,
+        child: NestedScrollView(
+          headerSliverBuilder: (context, value) {
+            return [
+              CustomAppbar(
+                tabController: _tabController,
+              ),
+            ];
+          },
+          body: TabBarView(
+            controller: _tabController,
+            children: [
               ProfileScreen(),
               SettingsScreen(),
-            ]),
-          )
-        ],
-      ),
+            ],
+          ),
+        ),
+      )
     );
   }
 }
