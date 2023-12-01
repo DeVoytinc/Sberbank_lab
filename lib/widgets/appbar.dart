@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sberbank_lab/themes/sizes.dart';
+import 'package:sberbank_lab/themes/text_styles.dart';
 
 class CustomAppbar extends StatelessWidget {
   const CustomAppbar({Key? key, required this.tabController})
@@ -23,14 +25,7 @@ class CustomAppbar extends StatelessWidget {
         icon: const Icon(Icons.close),
         onPressed: () {},
       ),
-      titleTextStyle: const TextStyle(
-        color: Colors.black,
-        fontSize: 16,
-        fontFamily: 'SF Pro Text',
-        fontWeight: FontWeight.w500,
-        height: 0.08,
-        letterSpacing: -0.40,
-      ),
+      titleTextStyle: TextStyles.userName(Sizes.text_largeHeader),
       bottom: TabBar(
         indicatorSize: TabBarIndicatorSize.tab,
         controller: tabController,

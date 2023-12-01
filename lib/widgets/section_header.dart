@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sberbank_lab/themes/sizes.dart';
+import 'package:sberbank_lab/themes/text_styles.dart';
 
 import '../Themes/colors.dart';
 
@@ -16,27 +18,9 @@ class SectionHeader extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            title,
-            style: const TextStyle(
-              color: MyColors.TextTitleColor,
-              fontSize: 20,
-              fontWeight: FontWeight.w700,
-              //height: 0.06,
-              letterSpacing: -0.70,
-            ),
-          ),
-          const SizedBox(
-            height: 14,
-          ),
-          Text(paragraph,
-              style: const TextStyle(
-                color: MyColors.TextSubtitleColor,
-                fontSize: 14,
-                fontWeight: FontWeight.w500,
-                //height: 0.09,
-                letterSpacing: -0.42,
-              )),
+          Text(title, style: TextStyles.primaryBold(Sizes.text_regularHeader)),
+          const SizedBox(height: 14,),
+          Text(paragraph, style: TextStyles.secondary(Sizes.text_regular)),
         ],
       ),
     );
