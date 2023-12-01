@@ -16,9 +16,9 @@ class SectionHeader extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(title, style: TextStyles.primaryBold(Sizes.text_regularHeader)),
-          const SizedBox(height: 14,),
-          Text(paragraph, style: TextStyles.secondary(Sizes.text_regular)),
+          Text(title, style: TextStyles.primaryBold(Sizes.textRegularHeader)),
+          const SizedBox(height: 8,),
+          Text(paragraph, style: TextStyles.secondary(Sizes.textRegular)),
         ],
       ),
     );

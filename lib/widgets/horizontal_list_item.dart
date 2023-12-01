@@ -40,18 +40,18 @@ class HorizontalListItem extends StatelessWidget {
                 ),
                 Text(
                   subscription.title,
-                  style: TextStyles.primary(Sizes.text_regular)
+                  style: TextStyles.primary(Sizes.textRegular)
                 ),
               ],
             ),
             const Spacer(),
             Text(
               subscription.subtitle,
-              style: TextStyles.primary(Sizes.text_small)
+              style: TextStyles.primary(Sizes.textSmall)
             ),
             Text(
               subscription.money,
-              style: TextStyles.secondary(Sizes.text_small)
+              style: TextStyles.secondary(Sizes.textSmall)
             )
           ]),
         ),

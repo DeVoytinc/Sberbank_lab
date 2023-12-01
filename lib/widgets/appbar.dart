@@ -25,7 +25,7 @@ class CustomAppbar extends StatelessWidget {
         icon: const Icon(Icons.close),
         onPressed: () {},
       ),
-      titleTextStyle: TextStyles.userName(Sizes.text_largeHeader),
+      titleTextStyle: TextStyles.userName(Sizes.textLargeHeader),
       bottom: TabBar(
         indicatorSize: TabBarIndicatorSize.tab,
         controller: tabController,
@@ -72,7 +72,7 @@ class CustomAppbar extends StatelessWidget {
                 Text(
                   'Екатерина',
                   textAlign: TextAlign.center,
-                  style: TextStyles.primaryBold(Sizes.text_largeHeader),
+                  style: TextStyles.primaryBold(Sizes.textLargeHeader),
                   ),
                 const SizedBox(
                   height: 10,

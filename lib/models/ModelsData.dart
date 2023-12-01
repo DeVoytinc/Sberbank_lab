@@ -5,17 +5,17 @@ import 'package:sberbank_lab/models/TariffsAndLimitsItemModel.dart';
 class ModelsData{
   static List<TariffsAndLimitsItemModel> tariffsAndLimitsList =
   [
-    TariffsAndLimitsItemModel(
+    const TariffsAndLimitsItemModel(
       imageName: 'lib/images/speedometer.svg',  
       title: 'Изменить суточный лимит', 
       subtitle: 'На платежи и переводы'
     ),
-    TariffsAndLimitsItemModel(
+    const TariffsAndLimitsItemModel(
       imageName: 'lib/images/percent.svg',  
       title: 'Переводы без комиссии', 
       subtitle: 'Показать остаток в этом месяце'
     ),
-    TariffsAndLimitsItemModel(
+    const TariffsAndLimitsItemModel(
       imageName: 'lib/images/arrows_forward_back.svg',  
       title: 'Информация о тарифахи лимитах', 
       subtitle: ''
@@ -25,13 +25,13 @@ class ModelsData{
 
   static List<Subscription> subscriptions =
   [
-    Subscription(
+    const Subscription(
       imageName: 'lib/images/sber_prime.png',  
       title: 'СберПрайм', 
       subtitle: 'Платеж 9 июля',
       money: '199Р в месяц'
     ),
-    Subscription(
+    const Subscription(
       imageName: 'lib/images/percent_fill.png',  
       title: 'Переводы', 
       subtitle: 'Автопродление 21 августа',

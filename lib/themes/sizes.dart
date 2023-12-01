@@ -4,9 +4,9 @@ class Sizes {
   static double profileImageSize = 110;
 
   // Text
-  static double text_regular = 16;
-  static double text_small = 14;
-  static double text_regularHeader = 20;
-  static double text_largeHeader = 24;
+  static double textRegular = 16;
+  static double textSmall = 14;
+  static double textRegularHeader = 20;
+  static double textLargeHeader = 24;
   
 }

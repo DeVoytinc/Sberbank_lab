@@ -36,7 +36,7 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
           },
           body: TabBarView(
             controller: _tabController,
-            children: [
+            children: const [
               ProfileScreen(),
               SettingsScreen(),
             ],
