@@ -49,8 +49,8 @@ class CustomAppbar extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Container(
-                  width: 110,
-                  height: 110,
+                  width: Sizes.profileImageSize,
+                  height: Sizes.profileImageSize,
                   decoration: ShapeDecoration(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(38),
@@ -69,15 +69,11 @@ class CustomAppbar extends StatelessWidget {
                 const SizedBox(
                   height: 30,
                 ),
-                const Text(
+                Text(
                   'Екатерина',
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 24,
-                    fontWeight: FontWeight.w700,
+                  style: TextStyles.primaryBold(Sizes.text_largeHeader),
                   ),
-                ),
                 const SizedBox(
                   height: 10,
                 ),

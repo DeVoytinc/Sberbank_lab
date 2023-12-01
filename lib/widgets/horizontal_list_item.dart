@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sberbank_lab/models/SubscriptionModel.dart';
-import 'package:sberbank_lab/themes/colors.dart';
+import 'package:sberbank_lab/themes/sizes.dart';
+import 'package:sberbank_lab/themes/text_styles.dart';
 
 class HorizontalListItem extends StatelessWidget {
   const HorizontalListItem({super.key, required this.subscription});
@@ -23,9 +24,7 @@ class HorizontalListItem extends StatelessWidget {
           shadowColor: Colors.black.withAlpha(90),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))
         ),
-        onPressed: () {
-          
-        },
+        onPressed: () { },
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 16),
           child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -33,41 +32,26 @@ class HorizontalListItem extends StatelessWidget {
               children: [
                 Image.asset(
                   subscription.imageName,
-                  width: 36,
-                  height: 36,
+                  width: Sizes.iconSize,
+                  height:  Sizes.iconSize,
                 ),
                 const SizedBox(
                   width: 13,
                 ),
                 Text(
                   subscription.title,
-                  style: const TextStyle(
-                    color: MyColors.TextTitleColor,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                    letterSpacing: -0.40,
-                  ),
+                  style: TextStyles.primary(Sizes.text_regular)
                 ),
               ],
             ),
-            Expanded(child: Container()),
+            const Spacer(),
             Text(
               subscription.subtitle,
-              style: const TextStyle(
-                color: MyColors.TextTitleColor,
-                fontSize: 14,
-                fontWeight: FontWeight.w500,
-                letterSpacing: -0.41,
-              ),
+              style: TextStyles.primary(Sizes.text_small)
             ),
             Text(
               subscription.money,
-              style: const TextStyle(
-                color: MyColors.TextSubtitleColor,
-                fontSize: 14,
-                fontWeight: FontWeight.w500,
-                letterSpacing: -0.41,
-              ),
+              style: TextStyles.secondary(Sizes.text_small)
             )
           ]),
         ),

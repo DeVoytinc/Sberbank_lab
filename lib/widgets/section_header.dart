@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:sberbank_lab/themes/sizes.dart';
 import 'package:sberbank_lab/themes/text_styles.dart';
 
-import '../Themes/colors.dart';
-
 class SectionHeader extends StatelessWidget {
   const SectionHeader(
       {super.key, required this.title, required this.paragraph});
