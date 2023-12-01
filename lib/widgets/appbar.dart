@@ -32,6 +32,7 @@ class CustomAppbar extends StatelessWidget {
         letterSpacing: -0.40,
       ),
       bottom: TabBar(
+        indicatorSize: TabBarIndicatorSize.tab,
         controller: tabController,
         tabs: const <Widget>[
           Tab(

@@ -4,21 +4,34 @@ import 'package:sberbank_lab/Themes/colors.dart';
 ThemeData lightThemeData(BuildContext context) {
   return ThemeData.light().copyWith(
     primaryColor: Color.fromARGB(255, 52, 65, 255),
-
     scaffoldBackgroundColor: MyColors.backgroundColor,
     canvasColor: Colors.white,
-      
-    appBarTheme: AppBarTheme(
-      elevation: 0,
-      backgroundColor: Color.fromARGB(255, 255, 255, 255),
-      iconTheme: IconThemeData(). copyWith(
-        color: MyColors.primary,
-      ),
-      actionsIconTheme: IconThemeData().copyWith(
-        color: MyColors.primary,
-      )
-    ), 
 
+    chipTheme: ChipThemeData(
+        showCheckmark: true,
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30),
+            side: const BorderSide(color: Colors.transparent)
+        ),
+        backgroundColor: Colors.black.withAlpha(30),
+        selectedColor: MyColors.primary.withAlpha(150),
+    ),
+
+    
+      colorScheme: ColorScheme.fromSeed(
+        seedColor: Colors.white,
+        surfaceTint: Colors.white
+      ),
+
+    appBarTheme: AppBarTheme(
+        elevation: 0,
+        backgroundColor: Color.fromARGB(255, 255, 255, 255),
+        iconTheme: IconThemeData().copyWith(
+          color: MyColors.primary,
+        ),
+        actionsIconTheme: IconThemeData().copyWith(
+          color: MyColors.primary,
+        )),
     tabBarTheme: TabBarTheme().copyWith(
       labelColor: Colors.black,
       labelStyle: const TextStyle(
@@ -33,12 +46,10 @@ ThemeData lightThemeData(BuildContext context) {
         border: Border(
           bottom: BorderSide(
             color: MyColors.tabBarIndicator,
-            width: 2.0, 
+            width: 2.0,
           ),
         ),
-       
       ),
     ),
   );
-      
 }
