@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:sberbank_lab/models/TariffsAndLimitsItemModel.dart';
+import 'package:sberbank_lab/models/tariffs_limits_item_model.dart';
 
 import '../themes/colors.dart';
 
@@ -14,18 +13,27 @@ class TariffsAndLimitsItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: GestureDetector(
-        onTap: () {
-          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-            content: Text(data.title),
-            showCloseIcon: true,
-          ));
-        },
+    return ElevatedButton(
+      onPressed: () {
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text(data.title),
+          showCloseIcon: true,
+        ));
+      },
+      style: ElevatedButton.styleFrom(
+        elevation: 0,
+            // for//egroundColor: AppColor.hoverOnPrimary,
+            // surfaceTintColor: AppColor.primary,
+            //fixedSize: const Size(Sizes.subscriptionButtonWidth, Sizes.subscriptionButtonHeight),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
+            )
+      ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 8.0),
         child: Row(
           children: [
-            SvgPicture.asset(
+            Image.asset(
               data.imageName,
               width: 36,
               height: 36,
@@ -60,15 +68,8 @@ class TariffsAndLimitsItem extends StatelessWidget {
                 ],
               ),
             ),
-            IconButton(
-              onPressed: () {
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                  content: Text(data.title),
-                  showCloseIcon: true,
-                ));
-              },
-              icon: SvgPicture.asset('lib/images/arrow_right.svg'),
-            ),
+            Image.asset('assets/images/disclosure.png', width: 24, height: 24,),
+            
           ],
         ),
       ),

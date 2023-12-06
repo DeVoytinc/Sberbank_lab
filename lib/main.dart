@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sberbank_lab/themes/theme.dart';
-import 'sceens/mainscreen.dart';
+import 'sceens/main_screen.dart';
 
 void main() {
   runApp(const MyApp());

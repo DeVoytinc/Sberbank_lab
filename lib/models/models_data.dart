@@ -1,22 +1,22 @@
-import 'package:sberbank_lab/models/SubscriptionModel.dart';
-import 'package:sberbank_lab/models/TariffsAndLimitsItemModel.dart';
+import 'package:sberbank_lab/models/subscription_model.dart';
+import 'package:sberbank_lab/models/tariffs_limits_item_model.dart';
 
 
 class ModelsData{
   static List<TariffsAndLimitsItemModel> tariffsAndLimitsList =
   [
     const TariffsAndLimitsItemModel(
-      imageName: 'lib/images/speedometer.svg',  
+      imageName: 'assets/images/speedometer.png',  
       title: 'Изменить суточный лимит', 
       subtitle: 'На платежи и переводы'
     ),
     const TariffsAndLimitsItemModel(
-      imageName: 'lib/images/percent.svg',  
+      imageName: 'assets/images/percent.png',  
       title: 'Переводы без комиссии', 
       subtitle: 'Показать остаток в этом месяце'
     ),
     const TariffsAndLimitsItemModel(
-      imageName: 'lib/images/arrows_forward_back.svg',  
+      imageName: 'assets/images/arrows.png',  
       title: 'Информация о тарифахи лимитах', 
       subtitle: ''
     ),
@@ -26,13 +26,13 @@ class ModelsData{
   static List<Subscription> subscriptions =
   [
     const Subscription(
-      imageName: 'lib/images/sber_prime.png',  
+      imageName: 'assets/images/sber_prime.png',  
       title: 'СберПрайм', 
       subtitle: 'Платеж 9 июля',
       money: '199Р в месяц'
     ),
     const Subscription(
-      imageName: 'lib/images/percent_fill.png',  
+      imageName: 'assets/images/percent_fill.png',  
       title: 'Переводы', 
       subtitle: 'Автопродление 21 августа',
       money: '199Р в месяц'
@@ -41,7 +41,7 @@ class ModelsData{
 
 
 
-  static List<String> tagslist =
+  static const List<String> _tagslist =
   [
     'Еда',
     'Саморазвитие',
@@ -53,9 +53,6 @@ class ModelsData{
   ];
 
   static Map<String, bool> getTagsMap (){
-    return { for (var v in tagslist) v : false };
-  } 
-
-  static Map<String, bool> tags = getTagsMap();
-  
+    return { for (var v in _tagslist) v : false };
+  }   
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../models/ModelsData.dart';
+import '../models/models_data.dart';
 import 'horizontal_list_item.dart';
 
 class HorizontalList extends StatelessWidget {
