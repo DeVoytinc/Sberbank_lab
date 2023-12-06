@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../models/ModelsData.dart';
+import '../models/models_data.dart';
 
 class TagsBlock extends StatefulWidget {
   const TagsBlock({super.key});
@@ -10,22 +9,29 @@ class TagsBlock extends StatefulWidget {
 }
 
 class _TagsBlockState extends State<TagsBlock> {
+  Map<String, bool> tags = ModelsData.getTagsMap();
 
   @override
   Widget build(BuildContext context) {
     return Wrap(
       spacing: 8.0,
       children: List<Widget>.generate(
-        ModelsData.tags.length,
+        tags.length,
         (int index) => Builder(
           builder: (BuildContext context) {
             return FilterChip(
-              label: Text(ModelsData.tags.keys.elementAt(index)),
-              selected: ModelsData.tags.values.elementAt(index),
+              label: Text(tags.keys.elementAt(index)),
+              labelStyle: Theme.of(context)
+                  .textTheme
+                  .bodySmall!
+                  .copyWith(color: Colors.black),
+              selected: tags.values.elementAt(index),
               onSelected: (bool selected) {
-                setState(() {
-                  ModelsData.tags[ModelsData.tags.keys.elementAt(index)] = selected;
-                });
+                setState(
+                  () {
+                    tags[tags.keys.elementAt(index)] = selected;
+                  },
+                );
               },
             );
           },
